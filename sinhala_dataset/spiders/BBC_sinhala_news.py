@@ -14,10 +14,6 @@ class BbcSinhalaNewsSpider(scrapy.Spider):
         #title = response.xpath("//div[@class='budgie-item faux-block-link']/div[@class='budgie__body']/a[@class='title-link']/h3[@class='title-link__title']/span[@class='title-link__title-text']/text()").extract()
         title=response.css('.title-link__title-text::text').extract()
         description=response.css('.eagle-item__summary::text').extract()
-        
-        #Extract data using xpath
-        #orders=response.xpath("//em[@title='Total Orders']/text()").extract()
-        #company_name=response.xpath("//a[@class='store $p4pLog']/text()").extract()
 
         row_data=zip(title,description)
 
